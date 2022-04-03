@@ -1,4 +1,3 @@
-import styles from "../../styles/Home.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { getBeachById } from "../../lib/beaches/searchBeaches";
@@ -6,7 +5,7 @@ import { getBeachesDataByOrg } from "../../lib/beaches-data/searchBeachesData";
 import { getPostsByBeach } from "../../lib/posts/searchPosts";
 import { useState, useEffect } from "react";
 
-export default function Beach({}) {
+export default function Beach({ }) {
   const router = useRouter();
   const { id } = router.query;
   const [beach, setBeach] = useState([]);
@@ -31,15 +30,21 @@ export default function Beach({}) {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className="flex flex-col w-screen">
       {beach && beach.length > 0 ? (
-        <div className={styles.container}>
-          <h1>{beach[0].name}</h1>
+        <div className="flex flex-col">
+          <h1 className="py-6 text-4xl font-bold mx-auto">{beach[0].name}</h1>
           <div>
-            <p>{beach[0].description}</p>
+            <p className="mx-auto font-semibold text-gray-700 w-5/12">
+              {beach[0].description}
+            </p>
           </div>
           {beachData && beachData.length > 0 ? (
-            <div>
+            <div className="w-5/12 mx-auto py-9">
+              <div className="py-w">
+                <h2 className="text-lg font-semibold">Beach Water Data</h2>
+                <hr />
+              </div>
               <h2>Beach Water Data</h2>
               <p>
                 <strong>Collected By: </strong>{" "}
@@ -63,8 +68,11 @@ export default function Beach({}) {
             <p>No beach health data available</p>
           )}
           {posts && posts.length > 0 ? (
-            <div>
-              <h2>Posts</h2>
+            <div className="w-5/12 mx-auto py-6">
+              <div className="py-w">
+                <h2 className="text-lg font-semibold">Posts</h2>
+                <hr />
+              </div>
               <Link href={`/post/${id}`}>
                 <a>Create post</a>
               </Link>

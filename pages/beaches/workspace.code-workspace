@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"name": "beaches_static",
+			"path": "../../../Beaches/beaches_static"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "beaches_static",
+		"git.ignoreLimitWarning": true
+	}
+}

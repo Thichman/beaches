@@ -31,7 +31,7 @@ function CreatePost() {
     router.push(`/beaches/${beach[0]}`);
   }
   return (
-    <div style={{ padding: "2rem" }}>
+    <div>
       <h1 className="text-3xl font-semibold tracking-wide mt-6">
         Create new post
       </h1>
