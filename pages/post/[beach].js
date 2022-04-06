@@ -1,4 +1,3 @@
-// pages/create-post.js
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { useRouter } from "next/router";
@@ -13,7 +12,7 @@ const initialState = { title: "", content: "" };
 
 function CreatePost() {
   const [post, setPost] = useState(initialState);
-  const { title, content } = post;
+  const { title, content, rating } = post;
   const router = useRouter();
   const { beach } = router.query;
 
@@ -26,12 +25,12 @@ function CreatePost() {
     post.id = id;
     const { data } = await supabase
       .from("posts")
-      .insert([{ title, content, beach }])
+      .insert([{ title, content, beach, rating }])
       .single();
     router.push(`/beaches/${beach[0]}`);
   }
   return (
-    <div>
+    <div className="mx-auto w-7/12 flex flex-col w-screen bg-gradient-to-r from-violet-500 to-fuchsia-500">
       <h1 className="text-3xl font-semibold tracking-wide mt-6">
         Create new post
       </h1>
@@ -46,13 +45,31 @@ function CreatePost() {
         value={post.content}
         onChange={(value) => setPost({ ...post, content: value })}
       />
-      <button
-        type="button"
-        className="mb-4 bg-green-600 text-white font-semibold px-8 py-2 rounded-lg"
-        onClick={createNewPost}
-      >
-        Create Post
-      </button>
+      <div className="flex justify-between">
+        <button
+          type="button"
+          className="mb-4 bg-green-600 text-white font-semibold px-8 py-2 rounded-lg"
+          onClick={createNewPost}
+        >
+          Create Post
+        </button>
+        <div>
+          <label htmlFor="rating">Rating</label>
+          <select
+            className="bg-gray-200"
+            name="rating"
+            id="rating"
+            onChange={onChange}
+          >
+            <option value={0}>0 Stars</option>
+            <option value={1}>1 Star</option>
+            <option value={2}>2 Stars</option>
+            <option value={3}>3 Stars</option>
+            <option value={4}>4 Stars</option>
+            <option value={5}>5 Stars</option>
+          </select>
+        </div>
+      </div>
     </div>
   );
 }

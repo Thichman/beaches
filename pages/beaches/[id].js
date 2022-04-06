@@ -30,12 +30,12 @@ export default function Beach({ }) {
   }, []);
 
   return (
-    <div className="flex flex-col w-screen">
+    <div className="flex flex-col w-screen flex flex-col w-screen bg-gradient-to-r from-violet-500 to-fuchsia-500">
       {beach && beach.length > 0 ? (
         <div className="flex flex-col">
           <h1 className="py-6 text-4xl font-bold mx-auto">{beach[0].name}</h1>
           <div>
-            <p className="mx-auto font-semibold text-gray-700 w-5/12">
+            <p className="mx-auto font-semibold text-black w-5/12">
               {beach[0].description}
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function Beach({ }) {
                 <h2 className="text-lg font-semibold">Beach Water Data</h2>
                 <hr />
               </div>
-              <h2>Beach Water Data</h2>
+
               <p>
                 <strong>Collected By: </strong>{" "}
                 {beachData[0].OrganizationFormalName}
@@ -70,18 +70,22 @@ export default function Beach({ }) {
           {posts && posts.length > 0 ? (
             <div className="w-5/12 mx-auto py-6">
               <div className="py-w">
-                <h2 className="text-lg font-semibold">Posts</h2>
+                <h2 className="text-lg font-semibold">Users Posts</h2>
                 <hr />
               </div>
               <Link href={`/post/${id}`}>
-                <a>Create post</a>
+                <a className="text-blue-900 border-2">Create New Post</a>
               </Link>
               <ul>
                 {posts.map((post) => (
-                  <li key={post.id}>
-                    <p>
+                  <li key={post.id} className="my-4 border-2 py-2">
+                    <div className="flex justify-between">
                       <strong>{post.title}</strong>
-                    </p>
+                      {post.rating && (
+                        <p className="bg-gray-200 rounded px-1">
+                          Rating:{post.rating}</p>
+                      )}
+                    </div>
                     <p>{post.content}</p>
                   </li>
                 ))}
