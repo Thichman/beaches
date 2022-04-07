@@ -48,8 +48,7 @@ function CreatePost() {
 
       <button
         type="button"
-        className="mb-4 text-white font-semibold px-8 py-2 rounded-lg"
-        class="bg-green-500 hover:bg-green-700"
+        className="mb-4 text-white font-semibold px-8 py-2 rounded-lg bg-green-500 hover:bg-green-700"
         onClick={createNewPost}
       >
         Create Post
