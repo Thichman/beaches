@@ -41,7 +41,7 @@ export default function Home() {
         {beaches && beaches.length > 0 ? (
           <ul>
             {beaches.map((beach) => (
-              <li className="bg-gray-300 py-2 my-2 text-center w-25" key={beach.id}>
+              <li className="bg-blue-300 py-2 my-2 text-center w-25" key={beach.id}>
                 <Link href={`/beaches/${beach.id}`}>
                   <a>{beach.name}</a>
                 </Link>

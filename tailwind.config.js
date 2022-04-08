@@ -4,7 +4,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      theme: {
+        extend: {
+          backgroundImage: {
+            'hero-pattern': '/public/beachimg.jpeg',
+          }
+        }
+      }
+    }
   },
   plugins: [],
 }

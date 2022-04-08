@@ -63,6 +63,17 @@ export default function Beach({ }) {
               <p>
                 <strong>Longitude:</strong> {beachData[0].LongitudeMeasure}
               </p>
+              <p>
+                <strong>For more water information and safety please check out this official water
+                  safety interactive map:
+                </strong>
+                <div className="bg-blue-200 mx-auto">
+                  <Link href="https://www.miamiwaterkeeper.org/water_quality_map">
+                    Water Quality Map
+                  </Link>
+                </div>
+
+              </p>
             </div>
           ) : (
             <p>No beach health data available</p>
