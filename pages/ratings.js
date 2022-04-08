@@ -29,6 +29,6 @@ export default function Beach({ }) {
     //     }
     // }, []);
     return (
-        <div>This page is almsot complete!</div>
+        <div>This page is almost complete!</div>
     )
 }
