@@ -12,7 +12,7 @@ export default function contact_us() {
                 <Image
                     src="/Men_s_Soccer_Headshots_Tyson_Hichman.jpeg"
                     alt="beach pic"
-                    width={700}
+                    width={500}
                     height={900}
                 />
             </div>
