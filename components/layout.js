@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Layout({ children }) {
     return (
         <div className="flex flex-col justify-between item-center shadow-sm">
-            <div className="text-center justify-between item-center shadow-sm">
+            <div className="text-center text-xl justify-between item-center shadow-sm">
                 <Link href="/">
                     <a className="mx-2 text-black">Home</a>
                 </Link>
