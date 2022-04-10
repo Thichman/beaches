@@ -12,8 +12,8 @@ export default function contact_us() {
                 <Image
                     src="/Men_s_Soccer_Headshots_Tyson_Hichman.jpeg"
                     alt="beach pic"
-                    width={300}
-                    height={1500}
+                    width={500}
+                    height={1000}
                 />
             </div>
             <div className="mx-auto text-center py-9 text-lg"> Please contact us with any further questions.</div>
